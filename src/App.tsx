@@ -1,11 +1,14 @@
-
+// import { Router } from "react-router-dom";
+import { BrowserRouter } from 'react-router-dom';
+import Router from './Routes';
+import Sidebar from './components/Sidebar';
 function App() {
-
-
   return (
-    <div className='flex min-h-screen flex-col items-center p-4 lg:p-12'>
-      
-      Index page
+    <div>
+      <BrowserRouter>
+        <Sidebar />
+        <Router />
+      </BrowserRouter>
     </div>
   );
 }
