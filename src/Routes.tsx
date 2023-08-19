@@ -6,11 +6,13 @@ import PersonnelPage from './pages/personnel';
 
 const Router: React.FC = () => {
   return (
-    <Routes>
-      <Route path='/financial' element={<FinancialPage />} />
-      <Route path='/' element={<MarketingPage />} />
-      <Route path='/personnel' element={<PersonnelPage />} />
-    </Routes>
+    <div className='w-9/12 bg-white p-8'>
+      <Routes>
+        <Route path='/financial' element={<FinancialPage />} />
+        <Route path='/' element={<MarketingPage />} />
+        <Route path='/personnel' element={<PersonnelPage />} />
+      </Routes>
+    </div>
   );
 };
 

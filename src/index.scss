@@ -2,6 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
+// define color variables
+:root{
+    --bg-color: #0B344B;
+    // --text-color: #333;
+    // --primary-color: #f1356d;
+    // --secondary-color: #ff7eb6;
+    // --tertiary-color: #ffacda;
+    // --quaternary-color: #ffdbf1;
+    // --quinary-color: #ffffff;
+    // --senary-color: #c9c9c9;
+    // --septenary-color: #666666;
+    // --octonary-color: #333333;
+    // --nonary-color: #000000;
+}
 body{
-    font-family: 'Inter'
+    font-family: 'Inter';
+    background-color: var(--bg-color);
+}
+
+.sidebar{
+    border-right: 1px solid #C2CAD0;
+    height: 100vh;
+    background-color:#F1F1F1 ;
+    &--menu{
+        &--item{
+            color: #242424;
+            &__active{
+                background-color: #FFF;
+                border-left: 4px solid #C63040;
+            }
+        }
+    }
 }
