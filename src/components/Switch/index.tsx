@@ -19,7 +19,7 @@ const Switcher: React.FC = () => {
           />
           <div
             className={`box block h-8 w-14 rounded-full ${
-              isChecked ? 'bg-primary' : 'bg-dark'
+              isChecked ? 'bg-green-800' : 'bg-red-700'
             }`}
           ></div>
           <div

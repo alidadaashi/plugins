@@ -4,7 +4,7 @@ import Router from './Routes';
 import Sidebar from './components/Sidebar';
 function App() {
   return (
-    <div className='container mx-auto'>
+    <div className=''>
       <BrowserRouter>
         <div className='flex '>
           <Sidebar />
