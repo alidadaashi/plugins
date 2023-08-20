@@ -24,6 +24,7 @@ const PluginsPage: React.FC<PluginsPageProps> = ({
                 key={index}
                 content={plugin[1]}
                 active={active.includes(plugin[0]) ? true : false}
+                disabled={disabled.includes(plugin[0]) ? true : false}
               />
             );
           }
