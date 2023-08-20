@@ -10,3 +10,8 @@ export interface plugin {
   title: string;
   description: string;
 }
+export interface AppState {
+  tabs: string[];
+  tabdata: Record<string, tab>;
+  plugins: Record<string, plugin>;
+}

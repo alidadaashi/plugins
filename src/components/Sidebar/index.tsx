@@ -2,26 +2,25 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import Logo from '../../shared/assets/images/Logo.svg';
 import { tab } from '../../shared/types';
 import { ICONS } from '../../shared/Constants/icons';
-interface SidebarProps {
-  tabsData: Record<string, tab>;
-  tabs?: string[];
-}
+import { useContext } from 'react';
+import AppContext from '../../shared/context/appContext';
 
-const Sidebar: React.FC<SidebarProps> = ({ tabsData, tabs }) => {
+const Sidebar: React.FC = () => {
+  const { tabs, tabdata } = useContext(AppContext);
   const navigat = useNavigate();
-  console.log('SIDEBAR: ', tabsData);
-  // Object.keys(tabsData).length && console.log('>>>', Object.values(tabsData));
+  // console.log('SIDEBAR: ', tabdata);
+  // Object.keys(tabdata).length && console.log('>>>', Object.values(tabdata));
   return (
     <div className='h-100 sidebar w-3/12 py-8'>
       <h1 className='mb-12 w-9/12 px-8' onClick={() => navigat('/')}>
         <img src={Logo} alt='logo' />
       </h1>
       <ul className='sidebar--menu'>
-        {tabsData && tabs && (
+        {tabdata && tabs && (
           <>
             {tabs.length && (
               <>
-                {Object.values(tabsData).map((tab, index) => {
+                {Object.values(tabdata).map((tab, index) => {
                   return (
                     <li key={index} className='sidebar--menu--item'>
                       <NavLink
