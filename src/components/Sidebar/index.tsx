@@ -3,6 +3,7 @@ import Logo from '../../shared/assets/images/Logo.svg';
 import { ICONS } from '../../shared/Constants/icons';
 import { useContext } from 'react';
 import AppContext from '../../shared/context/appContext';
+import AllPluginsSwitch from '../Switch/AllPluginsSwitch';
 
 const Sidebar: React.FC = () => {
   const { tabs, tabdata } = useContext(AppContext);
@@ -10,7 +11,7 @@ const Sidebar: React.FC = () => {
   // console.log('SIDEBAR: ', tabdata);
   // Object.keys(tabdata).length && console.log('>>>', Object.values(tabdata));
   return (
-    <div className='h-100 sidebar w-3/12 py-8'>
+    <div className='h-100 sidebar relative w-3/12 py-8'>
       <h1 className='mb-12 w-9/12 px-8' onClick={() => navigat('/')}>
         <img src={Logo} alt='logo' />
       </h1>
@@ -45,6 +46,7 @@ const Sidebar: React.FC = () => {
           </>
         )}
       </ul>
+      <AllPluginsSwitch active={true} />
     </div>
   );
 };

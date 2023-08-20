@@ -5,6 +5,7 @@
 // define color variables
 :root{
     --bg-color: #0B344B;
+    --green: #5BC88D;
     // --text-color: #333;
     // --primary-color: #f1356d;
     // --secondary-color: #ff7eb6;
@@ -34,4 +35,14 @@ body{
             }
         }
     }
+}
+
+.switch{
+    &--all{
+        &__active{
+            background: linear-gradient(180deg, rgba(241, 241, 241, 0.62) 22.71%, #BDE3CF 75.52%, #A2DCBC 100%);        
+        }
+        &__inactive{
+            background: linear-gradient(180deg, rgba(241, 241, 241, 0.62) 23.85%, #E8BFC3 70.31%, rgba(219, 139, 147, 0.72) 100%);    }
+}
 }
