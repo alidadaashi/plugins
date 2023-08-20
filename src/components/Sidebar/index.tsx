@@ -1,6 +1,5 @@
 import { NavLink, useNavigate } from 'react-router-dom';
 import Logo from '../../shared/assets/images/Logo.svg';
-import { tab } from '../../shared/types';
 import { ICONS } from '../../shared/Constants/icons';
 import { useContext } from 'react';
 import AppContext from '../../shared/context/appContext';
@@ -27,7 +26,7 @@ const Sidebar: React.FC = () => {
                         className={({ isActive }) =>
                           `${
                             isActive ? 'sidebar--menu--item__active' : ''
-                          }  mb-8 flex items-center px-8  py-5 text-xl`
+                          }  mb-0 flex items-center px-8  py-6 text-xl`
                         }
                         to={tab.title.toLowerCase()}
                       >

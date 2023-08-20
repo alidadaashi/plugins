@@ -1,14 +1,16 @@
+import { plugin } from '../../shared/types';
 import Switcher from '../Switch';
-
-const PluginCard: React.FC = () => {
+interface PluginCardProps {
+  content: plugin;
+}
+const PluginCard: React.FC<PluginCardProps> = ({ content }) => {
   return (
     <div className='pluginCard flex flex-col rounded-xl border border-slate-400 p-6'>
       <div className='flex items-start justify-between'>
         <div>
-          <h4 className='pluginCard--title'>Plugin 1</h4>
+          <h4 className='pluginCard--title'>{content.title}</h4>
           <p className='pluginCard--description text-slate-700'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-            voluptatum, voluptate, quibusdam, quia voluptas quod quos dolorum
+            {content.description}
           </p>
         </div>
         <Switcher />

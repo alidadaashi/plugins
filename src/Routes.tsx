@@ -1,20 +1,26 @@
 import * as React from 'react';
-import { Route, Routes, redirect } from 'react-router-dom';
-import FinancialPage from './pages/financial';
-import MarketingPage from './pages/marketing';
-import PersonnelPage from './pages/personnel';
+import { useRoutes } from 'react-router-dom';
+import AppContext from './shared/context/appContext';
+import PluginsPage from './pages/plugins';
 
 const Router: React.FC = () => {
-  return (
-    <div className='w-9/12 bg-white p-8'>
-      <Routes>
-        {/* <Route path='/' /> */}
-        <Route path='/finance' element={<FinancialPage />} />
-        <Route path='/marketing' element={<MarketingPage />} />
-        <Route path='/personnel' element={<PersonnelPage />} />
-      </Routes>
-    </div>
+  const { tabs, tabdata } = React.useContext(AppContext);
+  const routes = useRoutes(
+    Object.values(tabdata).map((tab, index) => {
+      return {
+        path: tab.title.toLowerCase(),
+        element: (
+          <PluginsPage
+            active={tab.active}
+            disabled={tab.disabled}
+            inactive={tab.inactive}
+            title={tab.title}
+          />
+        ),
+      };
+    })
   );
+  return <div className='w-9/12 bg-white p-8'>{routes}</div>;
 };
 
 export default Router;
