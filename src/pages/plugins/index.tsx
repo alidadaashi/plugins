@@ -1,4 +1,3 @@
-import { act } from 'react-dom/test-utils';
 import PluginCard from '../../components/PluginCard';
 import { tab } from '../../shared/types';
 import { useContext } from 'react';
@@ -13,13 +12,20 @@ const PluginsPage: React.FC<PluginsPageProps> = ({
 }) => {
   const pluginsToShow = active.concat(disabled).concat(inactive);
   const { plugins } = useContext(AppContext);
+
   return (
     <div>
       <h1 className='mb-12 text-2xl text-slate-600'> {title} Plugins </h1>
       <div className='grid grid-cols-3 gap-6'>
-        {Object.keys(plugins).map((plugin, index) => {
-          if (pluginsToShow.includes(plugin)) {
-            return <PluginCard key={index} content={plugins[plugin]} />;
+        {Object.entries(plugins).map((plugin, index) => {
+          if (pluginsToShow.includes(plugin[0])) {
+            return (
+              <PluginCard
+                key={index}
+                content={plugin[1]}
+                active={active.includes(plugin[0]) ? true : false}
+              />
+            );
           }
         })}
       </div>

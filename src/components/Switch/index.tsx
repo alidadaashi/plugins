@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-const Switcher: React.FC = () => {
-  const [isChecked, setIsChecked] = useState(false);
+const Switcher: React.FC<{ active: boolean }> = ({ active }) => {
+  const [isChecked, setIsChecked] = useState(active);
 
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
