@@ -26,23 +26,31 @@ body{
     border-right: 1px solid #C2CAD0;
     height: 100vh;
     background-color:#F1F1F1 ;
-    &--menu{
-        &--item{
+    &__menu{
+        &__item{
             color: #242424;
-            &__active{
+            &--active{
                 background-color: #FFF;
                 border-left: 4px solid #C63040;
             }
         }
     }
 }
+.pluginCard{
+    &--disabled{
+        top: -1px;
+    left: -1px;
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+    }
+}
 
 .switch{
-    &--all{
-        &__active{
+    &__all{
+        &--active{
             background: linear-gradient(180deg, rgba(241, 241, 241, 0.62) 22.71%, #BDE3CF 75.52%, #A2DCBC 100%);        
         }
-        &__inactive{
+        &--inactive{
             background: linear-gradient(180deg, rgba(241, 241, 241, 0.62) 23.85%, #E8BFC3 70.31%, rgba(219, 139, 147, 0.72) 100%);    }
 }
 }

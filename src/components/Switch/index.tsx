@@ -9,8 +9,8 @@ const Switcher: React.FC<{ active: boolean }> = ({ active }) => {
 
   return (
     <>
-      <label className='flex cursor-pointer select-none items-center'>
-        <div className='relative'>
+      <label className='cursor-pointer select-none flex-col items-center'>
+        <div className='relative mb-2'>
           <input
             type='checkbox'
             checked={isChecked}
@@ -19,7 +19,7 @@ const Switcher: React.FC<{ active: boolean }> = ({ active }) => {
           />
           <div
             className={`box block h-8 w-14 rounded-full ${
-              isChecked ? 'bg-green-800' : 'bg-red-700'
+              isChecked ? 'bg-green-500' : 'bg-red-700'
             }`}
           ></div>
           <div
@@ -28,6 +28,11 @@ const Switcher: React.FC<{ active: boolean }> = ({ active }) => {
             }`}
           ></div>
         </div>
+        {isChecked ? (
+          <div className='text-sm text-green-500 '> Allowed </div>
+        ) : (
+          <div className='text-sm text-red-600 '> Blocked </div>
+        )}
       </label>
     </>
   );

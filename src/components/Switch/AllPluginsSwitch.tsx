@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import power from '../../shared/assets/icons/power2.svg';
 import classNames from 'classnames';
 
 const AllPluginsSwitch: React.FC<{ active: boolean }> = ({ active }) => {
@@ -13,8 +12,8 @@ const AllPluginsSwitch: React.FC<{ active: boolean }> = ({ active }) => {
     <>
       <label
         className={classNames(
-          ' absolute bottom-0 flex w-full cursor-pointer select-none items-center justify-between px-8 py-6',
-          isChecked ? 'switch--all__active' : 'switch--all__inactive'
+          ' absolute bottom-0 flex w-full cursor-pointer select-none items-center justify-between px-8 pb-6 pt-0',
+          isChecked ? 'switch__all--active' : 'switch__all--inactive'
         )}
       >
         <h4 className='text-md text-slate-600'>
@@ -29,7 +28,7 @@ const AllPluginsSwitch: React.FC<{ active: boolean }> = ({ active }) => {
           />
           <div
             className={`box block h-10 w-16 rounded-full ${
-              isChecked ? 'bg-green-800' : 'bg-red-700'
+              isChecked ? 'bg-green-500' : 'bg-red-700'
             }`}
           ></div>
           <div
@@ -49,7 +48,7 @@ const AllPluginsSwitch: React.FC<{ active: boolean }> = ({ active }) => {
                 cy='15.5'
                 r='9'
                 stroke={isChecked ? '#5BC88D' : '#F87171'}
-                stroke-width='3'
+                strokeWidth='3'
               />
               <rect
                 x='4.05078'

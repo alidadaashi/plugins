@@ -13,12 +13,12 @@ const PluginCard: React.FC<PluginCardProps> = ({
   return (
     <div className='pluginCard relative flex flex-col rounded-xl border border-slate-400 p-6'>
       {disabled && (
-        <div className='absolute left-0 top-0 z-10 h-full w-full cursor-not-allowed rounded-xl border border-white bg-white opacity-70'></div>
+        <div className='pluginCard--disabled  absolute z-10 cursor-not-allowed rounded-xl border border-white bg-white opacity-70'></div>
       )}
       <div className='flex items-start justify-between'>
-        <div>
-          <h4 className='pluginCard--title'>{content.title}</h4>
-          <p className='pluginCard--description text-slate-700'>
+        <div className='mr-2'>
+          <h4 className='pluginCard__title'>{content.title}</h4>
+          <p className='pluginCard__description text-slate-700'>
             {content.description}
           </p>
         </div>

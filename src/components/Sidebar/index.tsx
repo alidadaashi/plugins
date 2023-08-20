@@ -15,18 +15,18 @@ const Sidebar: React.FC = () => {
       <h1 className='mb-12 w-9/12 px-8' onClick={() => navigat('/')}>
         <img src={Logo} alt='logo' />
       </h1>
-      <ul className='sidebar--menu'>
+      <ul className='sidebar__menu'>
         {tabdata && tabs && (
           <>
             {tabs.length && (
               <>
                 {Object.values(tabdata).map((tab, index) => {
                   return (
-                    <li key={index} className='sidebar--menu--item'>
+                    <li key={index} className='sidebar__menu__item'>
                       <NavLink
                         className={({ isActive }) =>
                           `${
-                            isActive ? 'sidebar--menu--item__active' : ''
+                            isActive ? 'sidebar__menu__item--active' : ''
                           }  mb-0 flex items-center px-8  py-6 text-xl`
                         }
                         to={tab.title.toLowerCase()}
