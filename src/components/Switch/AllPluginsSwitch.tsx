@@ -1,11 +1,14 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import classNames from 'classnames';
+import AppContext from '../../shared/context/appContext';
 
 const AllPluginsSwitch: React.FC<{ active: boolean }> = ({ active }) => {
   const [isChecked, setIsChecked] = useState(active);
+  const { updateData } = useContext(AppContext);
 
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
+    updateData();
   };
 
   return (

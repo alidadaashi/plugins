@@ -15,6 +15,7 @@ const Router: React.FC = () => {
             disabled={tab.disabled}
             inactive={tab.inactive}
             title={tab.title}
+            tabName={Object.keys(tabdata)[index]}
           />
         ),
       };

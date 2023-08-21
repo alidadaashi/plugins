@@ -1,27 +1,53 @@
 {
   "data": {
-    "tabs": ["tab1", "tab2", "tab3"],
+    "tabs": [
+      "tab1",
+      "tab2",
+      "tab3"
+    ],
     "tabdata": {
       "tab1": {
         "title": "Marketing",
         "icon": "icon-marketing",
-        "active": ["plugin1", "plugin2", "plugin4"],
-        "disabled": ["plugin3"],
-        "inactive": ["plugin5", "plugin6"]
+        "active": [
+          "plugin1",
+          "plugin2",
+          "plugin4"
+        ],
+        "disabled": [
+          "plugin3"
+        ],
+        "inactive": [
+          "plugin5",
+          "plugin6"
+        ]
       },
       "tab2": {
         "title": "Finance",
         "icon": "icon-finance",
-        "active": ["plugin7", "plugin8"],
-        "disabled": ["plugin9"],
-        "inactive": ["plugin10"]
+        "active": [
+          "plugin7",
+          "plugin8"
+        ],
+        "disabled": [
+          "plugin9"
+        ],
+        "inactive": [
+          "plugin10"
+        ]
       },
       "tab3": {
         "title": "Personnel",
         "icon": "icon-people",
-        "active": ["plugin11"],
-        "disabled": ["plugin12"],
-        "inactive": ["plugin13"]
+        "active": [
+          "plugin11"
+        ],
+        "disabled": [
+          "plugin12"
+        ],
+        "inactive": [
+          "plugin13"
+        ]
       }
     },
     "plugins": {
@@ -77,7 +103,12 @@
         "title": "Plugin 13",
         "description": "Dolor laboris culpa ipsum aliqua velit mollit."
       }
-    }
+    },
+    "active": [
+      "pluginId1",
+      "pluginId2",
+      "pluginId3"
+    ]
   },
   "errors": {}
 }

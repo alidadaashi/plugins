@@ -14,4 +14,6 @@ export interface AppState {
   tabs: string[];
   tabdata: Record<string, tab>;
   plugins: Record<string, plugin>;
+  updateData: () => void;
+  setCurrentTab: (tab: string) => void;
 }

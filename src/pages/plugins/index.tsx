@@ -1,17 +1,23 @@
 import PluginCard from '../../components/PluginCard';
 import { tab } from '../../shared/types';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import AppContext from '../../shared/context/appContext';
 
-interface PluginsPageProps extends tab {}
+interface PluginsPageProps extends tab {
+  tabName: string;
+}
 const PluginsPage: React.FC<PluginsPageProps> = ({
   title,
   active,
   disabled,
   inactive,
+  tabName,
 }) => {
   const pluginsToShow = active.concat(disabled).concat(inactive);
-  const { plugins } = useContext(AppContext);
+  const { plugins, setCurrentTab } = useContext(AppContext);
+  useEffect(() => {
+    setCurrentTab(tabName);
+  }, [tabName, setCurrentTab]);
 
   return (
     <div>
