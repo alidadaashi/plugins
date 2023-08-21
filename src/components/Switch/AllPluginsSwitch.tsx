@@ -27,11 +27,11 @@ const AllPluginsSwitch: React.FC = () => {
     <>
       <label
         className={classNames(
-          ' absolute bottom-0 flex w-full cursor-pointer select-none items-center justify-between px-8 pb-6 pt-0',
+          ' absolute bottom-0 flex w-full cursor-pointer select-none items-center justify-between px-2 pb-6 pt-0 lg:px-8',
           isChecked ? 'switch__all--active' : 'switch__all--inactive'
         )}
       >
-        <h4 className='text-md text-slate-600'>
+        <h4 className='text-md hidden text-slate-600 lg:block'>
           {isChecked ? 'All Plugins enabled' : 'All plugins disabled'}
         </h4>
         <div className='relative'>

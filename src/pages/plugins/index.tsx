@@ -22,7 +22,7 @@ const PluginsPage: React.FC<PluginsPageProps> = ({
   return (
     <div>
       <h1 className='mb-12 text-2xl text-slate-600'> {title} Plugins </h1>
-      <div className='grid grid-cols-3 gap-6'>
+      <div className='grid grid-cols-1 gap-6 lg:grid-cols-3'>
         {Object.entries(plugins).map((plugin, index) => {
           if (pluginsToShow.includes(plugin[0])) {
             return (

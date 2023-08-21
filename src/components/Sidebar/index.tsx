@@ -11,8 +11,11 @@ const Sidebar: React.FC = () => {
   // console.log('SIDEBAR: ', tabdata);
   // Object.keys(tabdata).length && console.log('>>>', Object.values(tabdata));
   return (
-    <div className='h-100 sidebar relative w-3/12 py-8'>
-      <h1 className='mb-12 w-9/12 px-8' onClick={() => navigat('/')}>
+    <div className='h-100 sidebar sticky top-0 w-3/12 py-8'>
+      <h1
+        className='mb-12 w-9/12 pl-2 md:px-2 lg:px-8'
+        onClick={() => navigat('/')}
+      >
         <img src={Logo} alt='logo' />
       </h1>
       <ul className='sidebar__menu'>
@@ -36,7 +39,7 @@ const Sidebar: React.FC = () => {
                           className='mr-3 w-7'
                           alt={tab.icon}
                         />
-                        {tab.title}{' '}
+                        <div className='hidden lg:block'>{tab.title} </div>
                       </NavLink>{' '}
                     </li>
                   );
