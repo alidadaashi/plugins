@@ -6,6 +6,7 @@ const AppContext = createContext<AppState>({
   tabdata: {},
   plugins: {},
   updateData: () => {},
+  setCurrentTab: () => {},
 });
 
 export default AppContext;
@@ -15,6 +16,7 @@ const initialState: AppState = {
   tabdata: {},
   plugins: {},
   updateData: () => {},
+  setCurrentTab: () => {},
 };
 
 export const AppProvider = ({ children }: { children: ReactNode }) => {
@@ -31,30 +33,81 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       });
   }, []);
 
-  const updateData = () =>
-    // tabName: string,
-    // category: 'active' | 'inactive' | 'disabled',
-    // pluginName: string
-    {
-      fetch(`http://localhost:8000/data/`, {
-        method: 'PATCH',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          active: ['pluginId1', 'pluginId2', 'pluginId3'],
-        }),
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          // Handle the response (data) as needed
-          console.log(data);
-          setData(data);
-        })
-        .catch((error) => {
-          console.error('Error:', error);
+  const updateData = (
+    category: 'active' | 'disable',
+    status: boolean,
+    pluginName?: string
+  ) => {
+    console.log(category, status, data.tabdata[currentTab]);
+    let temp = data;
+    if (category === 'disable') {
+      if (status) {
+        // DISABLE ALL PLUGINS IN ALL TABS
+        temp.tabs.forEach((tab) => {
+          temp.tabdata[tab].disabled = [
+            ...temp.tabdata[tab].disabled,
+            ...temp.tabdata[tab].active,
+            ...temp.tabdata[tab].inactive,
+          ];
         });
-    };
+        setData({ ...temp });
+
+        // DISABLE ALL PLUGINS IN CURRENT TAB
+        // setData({
+        //   ...data,
+        //   tabdata: {
+        //     ...data.tabdata,
+        //     [currentTab]: {
+        //       ...data.tabdata[currentTab],
+        //       disabled: [
+        //         ...data.tabdata[currentTab].disabled,
+        //         ...data.tabdata[currentTab].active,
+        //         ...data.tabdata[currentTab].inactive,
+        //       ],
+        //     },
+        //   },
+        // });
+      } else {
+        // ENABLE ALL PLUGINS IN ALL TABS
+        temp.tabs.forEach((tab) => {
+          temp.tabdata[tab].disabled = temp.tabdata[tab].disabled.filter(
+            (element) =>
+              !temp.tabdata[tab].active.includes(element) &&
+              !temp.tabdata[tab].inactive.includes(element)
+          );
+        });
+        setData({ ...temp });
+        // ENABLE ALL PLUGINS IN CURRENT TAB
+        // setData({
+        //   ...data,
+        //   tabdata: {
+        //     ...data.tabdata,
+        //     [currentTab]: {
+        //       ...data.tabdata[currentTab],
+        //       disabled: [],
+        //     },
+        //   },
+        // });
+      }
+    }
+    // console.log(data);
+    fetch(`http://localhost:8000/data/`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        tabdata: data.tabdata,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setData(data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+  };
 
   return (
     <AppContext.Provider

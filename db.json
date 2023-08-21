@@ -103,12 +103,7 @@
         "title": "Plugin 13",
         "description": "Dolor laboris culpa ipsum aliqua velit mollit."
       }
-    },
-    "active": [
-      "pluginId1",
-      "pluginId2",
-      "pluginId3"
-    ]
+    }
   },
   "errors": {}
 }

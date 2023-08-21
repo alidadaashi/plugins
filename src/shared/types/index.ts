@@ -14,6 +14,10 @@ export interface AppState {
   tabs: string[];
   tabdata: Record<string, tab>;
   plugins: Record<string, plugin>;
-  updateData: () => void;
+  updateData: (
+    category: 'active' | 'disable',
+    status: boolean,
+    pluginName?: string
+  ) => void;
   setCurrentTab: (tab: string) => void;
 }
