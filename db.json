@@ -10,10 +10,10 @@
         "title": "Marketing",
         "icon": "icon-marketing",
         "active": [
-          "plugin4",
           "plugin5",
           "plugin6",
-          "plugin1"
+          "plugin1",
+          "plugin4"
         ],
         "disabled": [
           "plugin3"
