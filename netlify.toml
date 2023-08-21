@@ -1,4 +1,4 @@
 [build]
-  base = "dist" # Set to the directory containing your app's build output
-  publish = "dist" # Set to the directory containing your app's build output
+  base = "build" # Set to the directory containing your app's build output
+  publish = "build" # Set to the directory containing your app's build output
   command = "npm start" # The command to start your app
