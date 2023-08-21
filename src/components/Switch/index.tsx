@@ -1,10 +1,17 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-const Switcher: React.FC<{ active: boolean }> = ({ active }) => {
+const Switcher: React.FC<{
+  active: boolean;
+  changeSwitch: (status: boolean) => void;
+}> = ({ active, changeSwitch }) => {
   const [isChecked, setIsChecked] = useState(active);
 
   const handleCheckboxChange = () => {
-    setIsChecked(!isChecked);
+    setIsChecked((prevChecked) => {
+      const updatedChecked = !prevChecked;
+      changeSwitch(updatedChecked);
+      return updatedChecked;
+    });
   };
 
   return (

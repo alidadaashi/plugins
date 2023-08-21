@@ -38,7 +38,6 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     status: boolean,
     pluginName?: string
   ) => {
-    console.log(category, status, data.tabdata[currentTab]);
     let temp = data;
     if (category === 'disable') {
       if (status) {
@@ -88,6 +87,20 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
         //     },
         //   },
         // });
+      }
+    } else {
+      if (status && pluginName) {
+        temp.tabdata[currentTab].active.push(pluginName);
+        temp.tabdata[currentTab].inactive = temp.tabdata[
+          currentTab
+        ].inactive.filter((element) => element !== pluginName);
+        setData({ ...temp });
+      } else if (!status && pluginName) {
+        temp.tabdata[currentTab].inactive.push(pluginName);
+        temp.tabdata[currentTab].active = temp.tabdata[
+          currentTab
+        ].active.filter((element) => element !== pluginName);
+        setData({ ...temp });
       }
     }
     // console.log(data);

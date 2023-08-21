@@ -26,3 +26,4 @@ dist-ssr
 .env
 
 db2.json
+db.json

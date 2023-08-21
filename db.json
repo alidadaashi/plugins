@@ -10,15 +10,15 @@
         "title": "Marketing",
         "icon": "icon-marketing",
         "active": [
-          "plugin1",
-          "plugin2",
-          "plugin4"
+          "plugin4",
+          "plugin5",
+          "plugin2"
         ],
         "disabled": [
           "plugin3"
         ],
         "inactive": [
-          "plugin5",
+          "plugin1",
           "plugin6"
         ]
       },
@@ -27,14 +27,13 @@
         "icon": "icon-finance",
         "active": [
           "plugin7",
-          "plugin8"
+          "plugin8",
+          "plugin10"
         ],
         "disabled": [
           "plugin9"
         ],
-        "inactive": [
-          "plugin10"
-        ]
+        "inactive": []
       },
       "tab3": {
         "title": "Personnel",

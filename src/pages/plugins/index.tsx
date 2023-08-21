@@ -27,6 +27,7 @@ const PluginsPage: React.FC<PluginsPageProps> = ({
           if (pluginsToShow.includes(plugin[0])) {
             return (
               <PluginCard
+                pluginName={plugin[0]}
                 key={index}
                 content={plugin[1]}
                 active={active.includes(plugin[0]) ? true : false}

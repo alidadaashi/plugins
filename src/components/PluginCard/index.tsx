@@ -1,15 +1,23 @@
+import { useContext } from 'react';
+import AppContext from '../../shared/context/appContext';
 import { plugin } from '../../shared/types';
 import Switcher from '../Switch';
 interface PluginCardProps {
   content: plugin;
   active: boolean;
   disabled: boolean;
+  pluginName: string;
 }
 const PluginCard: React.FC<PluginCardProps> = ({
   content,
   active,
   disabled,
+  pluginName,
 }) => {
+  const { updateData } = useContext(AppContext);
+  const handleSwitch = (status: boolean) => {
+    updateData('active', status, pluginName);
+  };
   return (
     <div className='pluginCard relative flex flex-col rounded-xl border border-slate-400 p-6'>
       {disabled && (
@@ -22,7 +30,7 @@ const PluginCard: React.FC<PluginCardProps> = ({
             {content.description}
           </p>
         </div>
-        <Switcher active={active} />
+        <Switcher active={active} changeSwitch={handleSwitch} />
       </div>
     </div>
   );
