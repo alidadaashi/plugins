@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import classNames from 'classnames';
 import AppContext from '../../shared/context/appContext';
 
-const AllPluginsSwitch: React.FC<{ active: boolean }> = ({ active }) => {
+const AllPluginsSwitch: React.FC = () => {
   const [isChecked, setIsChecked] = useState(false);
   const { updateData, tabdata, tabs } = useContext(AppContext);
 

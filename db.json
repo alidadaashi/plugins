@@ -12,14 +12,14 @@
         "active": [
           "plugin4",
           "plugin5",
-          "plugin2"
+          "plugin6",
+          "plugin1"
         ],
         "disabled": [
           "plugin3"
         ],
         "inactive": [
-          "plugin1",
-          "plugin6"
+          "plugin2"
         ]
       },
       "tab2": {

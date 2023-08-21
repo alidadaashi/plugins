@@ -4,7 +4,7 @@ import AppContext from './shared/context/appContext';
 import PluginsPage from './pages/plugins';
 
 const Router: React.FC = () => {
-  const { tabs, tabdata } = React.useContext(AppContext);
+  const { tabdata } = React.useContext(AppContext);
   const routes = useRoutes(
     Object.values(tabdata).map((tab, index) => {
       return {
@@ -16,6 +16,7 @@ const Router: React.FC = () => {
             inactive={tab.inactive}
             title={tab.title}
             tabName={Object.keys(tabdata)[index]}
+            icon={tab.icon}
           />
         ),
       };

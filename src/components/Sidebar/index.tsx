@@ -46,7 +46,7 @@ const Sidebar: React.FC = () => {
           </>
         )}
       </ul>
-      <AllPluginsSwitch active={true} />
+      <AllPluginsSwitch />
     </div>
   );
 };
