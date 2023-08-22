@@ -11,7 +11,7 @@ const Sidebar: React.FC = () => {
   // console.log('SIDEBAR: ', tabdata);
   // Object.keys(tabdata).length && console.log('>>>', Object.values(tabdata));
   return (
-    <div className='h-100 sidebar sticky top-0 w-3/12 py-8'>
+    <div className='h-100 sidebar sticky top-0 max-w-min py-8 lg:max-w-sm'>
       <h1
         className='mb-12 w-9/12 pl-2 md:px-2 lg:px-8'
         onClick={() => navigat('/')}

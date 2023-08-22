@@ -22,7 +22,7 @@ const Router: React.FC = () => {
       };
     })
   );
-  return <div className='w-9/12 bg-white p-8'>{routes}</div>;
+  return <div className='w-full bg-white p-8'>{routes}</div>;
 };
 
 export default Router;
